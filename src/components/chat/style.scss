@@ -1,0 +1,180 @@
+.box {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background: linear-gradient(45deg, #ccc, #ffea00, rgba(249, 249, 249, 0.861), #6cb3ffe5, #ccc);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.room {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px solid #191818;
+  background-color:none;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 50px auto;
+
+  @media (min-width: 368px) {
+    width: 100%;
+  }
+
+    &__back {
+      align-self: flex-start;
+      margin: 10px;
+    }
+
+    &__box {
+      height: 90%;
+      width: 90%;
+      flex-grow: 1;
+      overflow-y: auto;
+      background-color: rgba(227, 232, 232, 0.3);
+      opacity: 80%;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    &__box-element {
+      margin-bottom: 10px;
+      width: fit-content;
+      padding: 5px;
+      background-color:rgba(249, 249, 249, 0.861);
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      text-align: left;
+      word-wrap: break-word;
+
+      @media (min-width: 368px) and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    &__box-element.sent {
+      margin-left: auto;
+      text-align: right;
+      background-color: #007bff;
+      color: #fff;
+      max-width: 500px;
+      word-wrap: break-word
+    }
+
+    &__box-name {
+      font-family: Mont, sans-serif;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: -0.32px;
+      color: #007bff;
+      font-weight: bold;
+      max-width: 500px;
+      word-wrap: break-word
+    }
+
+    &__box-name.sent {
+      margin-left: auto;
+      text-align: right;
+      background-color: #007bff;
+      color: #000;
+      max-width: 500px;
+      word-wrap: break-word
+    }
+
+    &__box-msg {
+      font-family: Mont, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.32px;
+      max-width: 500px;
+      word-wrap: break-word;
+      display: block;
+
+      @media (min-width: 368px) {
+        width: 100%;
+      }
+    }
+
+    &__emoji-button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: none;
+      margin-right: 10px;
+    }
+
+    &__form {
+      display: flex;
+      align-items: center;
+      width: 90%;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+      word-wrap: break-word;
+    }
+
+    &__input {
+      flex-grow: 1;
+      padding: 5px;
+      font-family: Mont, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: -0.32px;
+      background-color: rgba(227, 232, 232, 0.478);
+      outline: none;
+      margin-right: 10px;
+      border-radius: 10px;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #007bff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      outline: none;
+      border-radius: 10px;
+    }
+
+    &__button img {
+      width: 20px;
+      height: 20px;
+    }
+}
+.back {
+  height: 20px;
+  width: 20px;
+}
+
+.smile {
+  height: 35px;
+  width: 35px;
+}
+
+em-emoji-picker {
+  position: absolute;
+  top: 30.5%;
+  left: 55%;
+  width: 300px;
+  height: 400px;
+
+  @media (min-width: 368px) and (max-width: 768px) {
+    top: 55.5%;
+    left: 35%;
+    width: 200px;
+    height: 300px;
+  }
+}
