@@ -35,7 +35,7 @@ export const Chat = () => {
   }, [messages]);
 
   useEffect(() => {
-    const socket = io("http://localhost:3005");
+    const socket = io("https://chat-server-6m9g.onrender.com");
     socket.on("message", (message) => {
       setMessages(prevMessages => [...prevMessages, message]);
     });
@@ -48,7 +48,7 @@ export const Chat = () => {
   const sendMessage = (e) => {
     e.preventDefault();
     if (message.trim()) {
-      const socket = io("http://localhost:3005");
+      const socket = io("https://chat-server-6m9g.onrender.com");
       socket.emit("message", { user, message });
       setMessage("");
       setShowEmojiPicker(false);
