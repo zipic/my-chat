@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './style.scss';
 
 const Greeting = () => {
   const [user, setUser] = useState('');
   const [inputClear, setInputClear] = useState(true);
+  const [userExist, setUserExist] = useState(false);
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -12,6 +14,28 @@ const Greeting = () => {
     setInputClear(value.trim() === '');
   };
 
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('https://chat-backend-node-49q8.onrender.com/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: user }),
+      });
+
+      if (response.status === 201) {
+        console.log('Username is available');
+        navigate(`/chat/${user}`);
+      } else {
+        setUserExist(true);
+        setUser('')
+      }
+    } catch (error) {
+      console.error('Error creating user:', error);
+     
+    }
+  }
 
   return (
     <div className="chat">
@@ -19,19 +43,19 @@ const Greeting = () => {
       <div className="chat__border">
         <div>
           <input
-            className="chat__input"
+            className={userExist ? "chat__input-exist" : "chat__input"}
             type="text"
-            placeholder="Enter your name"
+            placeholder={userExist ? "User already exist" : "Enter your name"}
             value={user}
             onChange={handleInputChange}
           />
         </div>
-        <Link
+        <button
           className={`chat__button ${inputClear ? 'disabled' : ''}`}
-          to={`/chat/${user}`}
+          onClick={handleSubmit}
         >
           Log in
-        </Link>
+        </button>
       </div>
     </div>
   );
