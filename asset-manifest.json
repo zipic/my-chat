@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/my-chat/static/css/main.58f5fd95.css",
-    "main.js": "/my-chat/static/js/main.f4936f88.js",
+    "main.css": "/my-chat/static/css/main.b41469d4.css",
+    "main.js": "/my-chat/static/js/main.0e8c23f0.js",
     "static/media/Mont-Bold.ttf": "/my-chat/static/media/Mont-Bold.8478da2b2fe8edf010c7.ttf",
     "static/media/Mont-Regular.ttf": "/my-chat/static/media/Mont-Regular.c02e344a9a90e4410926.ttf",
     "static/media/Mont-SemiBold.ttf": "/my-chat/static/media/Mont-SemiBold.aa84a199946f2fd69966.ttf",
     "index.html": "/my-chat/index.html",
-    "main.58f5fd95.css.map": "/my-chat/static/css/main.58f5fd95.css.map",
-    "main.f4936f88.js.map": "/my-chat/static/js/main.f4936f88.js.map"
+    "main.b41469d4.css.map": "/my-chat/static/css/main.b41469d4.css.map",
+    "main.0e8c23f0.js.map": "/my-chat/static/js/main.0e8c23f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.58f5fd95.css",
-    "static/js/main.f4936f88.js"
+    "static/css/main.b41469d4.css",
+    "static/js/main.0e8c23f0.js"
   ]
 }
