@@ -1,6 +1,7 @@
 {
   "name": "chat-app",
   "version": "0.1.0",
+  "homepage": "https://zipic.github.io/my-chat",
   "private": true,
   "dependencies": {
     "@emoji-mart/data": "^1.1.2",

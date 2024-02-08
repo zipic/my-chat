@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './style.scss';
+import Loader from "../loader/Loader";
 
 const Greeting = () => {
   const [user, setUser] = useState('');
   const [inputClear, setInputClear] = useState(true);
   const [userExist, setUserExist] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -16,6 +18,7 @@ const Greeting = () => {
 
   const handleSubmit = async () => {
     try {
+      setIsLoaded(true);
       const response = await fetch('https://chat-backend-node-49q8.onrender.com/', {
         method: 'POST',
         headers: {
@@ -33,7 +36,8 @@ const Greeting = () => {
       }
     } catch (error) {
       console.error('Error creating user:', error);
-     
+    } finally {
+      setIsLoaded(false);
     }
   }
 
@@ -50,12 +54,14 @@ const Greeting = () => {
             onChange={handleInputChange}
           />
         </div>
+        {isLoaded ? <Loader/> : 
         <button
           className={`chat__button ${inputClear ? 'disabled' : ''}`}
           onClick={handleSubmit}
         >
           Log in
         </button>
+        }
       </div>
     </div>
   );
