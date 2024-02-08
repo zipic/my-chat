@@ -12,6 +12,7 @@ Check out the live demo [here](https://zipic.github.io/my-chat).
 - BEM
 - JavaScript
 - React
+- Web Sockets
 - back-end: https://github.com/zipic/chat-backend-node
 
 ## Features
